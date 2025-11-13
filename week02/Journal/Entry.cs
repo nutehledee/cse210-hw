@@ -2,21 +2,24 @@ using System;
 
 public class Entry
 {
-    public string Prompt { get; set; }
-    public string Response { get; set; }
-    public string Date { get; set; }
-    public string Mood { get; set; }
+    public string _prompt;
+    public string _response;
+    public string _date;
 
-    public Entry(string prompt, string response, string date, string mood)
+    public Entry(string prompt, string response, string date)
     {
-        Prompt = prompt;
-        Response = response;
-        Date = date;
-        Mood = mood;
+        _prompt = prompt;
+        _response = response;
+        _date = date;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"{_date} - {_prompt} - {_response}");
     }
 
     public override string ToString()
     {
-        return $"Date: {Date} | Mood: {Mood}\nPrompt: {Prompt}\nResponse: {Response}\n";
+        return $"{_date} | {_prompt} | {_response}";
     }
 }
